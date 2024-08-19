@@ -8,7 +8,11 @@ Canvas::Canvas(int width, int height){
 Canvas::~Canvas(){}
 
 void Canvas::run(){
-
+    while(window.isOpen()){
+        update(); 
+        handleEvents(); 
+        render(); 
+    }
 }
 void Canvas::handleEvents(){
     sf::Event event; 
@@ -20,5 +24,7 @@ void Canvas::handleEvents(){
 }
 void Canvas::update(){
 
-}
-void Canvas::render(){}
+};
+void Canvas::render(){
+    window.clear(); 
+};
