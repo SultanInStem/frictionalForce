@@ -2,7 +2,6 @@
 #define INCLINE_HPP 
 #include "SFML/Graphics.hpp"
 
-
 class Incline{
     private:
         sf::CircleShape triangle;
