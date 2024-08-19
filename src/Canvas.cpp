@@ -4,6 +4,7 @@ Canvas::Canvas(int width, int height){
     sf::ContextSettings settings;
     settings.antialiasingLevel = 8;  
     window.create(sf::VideoMode(width,height), "Friction Force", sf::Style::Titlebar | sf::Style::Close, settings); 
+    window.setFramerateLimit(90);
 }; 
 Canvas::~Canvas(){}
 
@@ -26,5 +27,7 @@ void Canvas::update(){
 
 };
 void Canvas::render(){
-    window.clear(); 
+    window.clear(sf::Color::Black);
+
+    window.display(); 
 };

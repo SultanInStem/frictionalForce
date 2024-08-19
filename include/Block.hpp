@@ -4,9 +4,12 @@
 
 class Block{
     private: 
-        
+        sf::RectangleShape shape; 
     public: 
-        Block(){};
+        Block(int width, int height){
+            shape.setSize(sf::Vector2f(width, height));
+            shape.setFillColor(sf::Color::Red);
+        };
         ~Block(){};
 };
 
