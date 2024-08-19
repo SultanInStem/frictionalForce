@@ -1,5 +1,4 @@
 #include "Canvas.hpp"
-
 Canvas::Canvas(int width, int height){
     sf::ContextSettings settings;
     settings.antialiasingLevel = 8;  
