@@ -9,7 +9,7 @@ class Canvas{
         void handleEvents(); 
         void render(); 
     public: 
-        Canvas(); 
+        Canvas(int width = 1080, int height = 920); 
         ~Canvas(); 
         void run(); 
 
