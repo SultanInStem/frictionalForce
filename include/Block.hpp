@@ -4,6 +4,7 @@
 
 class Block{
     private: 
+        float mass; 
         sf::RectangleShape shape; 
     public: 
         Block(int width, int height){
