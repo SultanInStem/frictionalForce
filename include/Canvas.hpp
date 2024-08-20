@@ -1,7 +1,7 @@
 #ifndef CANVAS_HPP 
 #define CANVAS_HPP 
-#include "Block.hpp"
 #include "Incline.hpp"
+#include "Block.hpp"
 #include "SFML/Graphics.hpp"
 class Canvas{
     private: 

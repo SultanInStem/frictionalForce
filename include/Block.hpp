@@ -7,12 +7,11 @@ class Block{
         float mass; 
         sf::RectangleShape shape; 
     public: 
-        Block(int width, int height){
+        Block(int width = 50, int height = 50){
             shape.setSize(sf::Vector2f(width, height));
             shape.setFillColor(sf::Color::Red);
         };
         ~Block(){};
 };
-
 
 #endif 
