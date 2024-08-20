@@ -35,10 +35,11 @@ void Canvas::update(){
     if(abs(force) < abs(staticFriction)) return; 
     float netForce = force - kineticFriction; 
     float acc = netForce / incline.mass; 
+    // YOU LEFT HERE 
 
 
 
-    
+
 
 };
 void Canvas::render(){
