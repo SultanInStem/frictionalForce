@@ -10,6 +10,7 @@ class Block{
         Block(int width = 50, int height = 50){
             shape.setSize(sf::Vector2f(width, height));
             shape.setFillColor(sf::Color::Red);
+            shape.setPosition(sf::Vector2f(0,0));
         };
         ~Block(){};
         void show(sf::RenderWindow& window){

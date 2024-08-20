@@ -1,7 +1,7 @@
 #include "Canvas.hpp"
 #include "Block.hpp"
 #include "Incline.hpp"
-Canvas::Canvas(int width, int height) : incline(30), block(50,50){
+Canvas::Canvas(int width, int height) : incline(60, 300), block(50,50){
     sf::ContextSettings settings;
     settings.antialiasingLevel = 8;  
     window.create(sf::VideoMode(width,height), "Friction Force", sf::Style::Titlebar | sf::Style::Close, settings); 
