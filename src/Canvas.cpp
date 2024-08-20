@@ -33,6 +33,5 @@ void Canvas::update(){
 void Canvas::render(){
     window.clear(sf::Color::Black);
     incline.show(window); 
-    block.show(window); 
     window.display(); 
 };
