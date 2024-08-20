@@ -4,10 +4,13 @@
 #include <iostream>
 class Incline{
     private:
+        sf::RectangleShape blockShape;
         sf::ConvexShape triangle;
         float static_Coefficient; 
         float kinetic_Coefficient;
         float angle;
+        float mass; 
+
     public: 
         Incline(float angle, float base){
             // tan(angle) = height / base
@@ -27,11 +30,19 @@ class Incline{
             triangle.setPoint(1, point2 + offset); 
             triangle.setPoint(2, point3 + offset); 
             triangle.setFillColor(sf::Color::Green);
+
+
+            blockShape.setSize(sf::Vector2f(50,50));
+            blockShape.setOrigin(sf::Vector2f(blockShape.getSize().x / 2.f, blockShape.getSize().y / 2.f));
+            blockShape.setFillColor(sf::Color::Red);
+
+
         }; 
         ~Incline(){};
         void show(sf::RenderWindow& window){
             window.draw(triangle);
         }
+        
 };
 
 
