@@ -18,27 +18,36 @@ class Incline{
             // height = base * tan(angle)
             this->angle = angle;
             float angleRad = angle * (M_PI / 180.f);
+            float height = - base * tan(angleRad); 
             sf::Vector2f point1(-base / 2,0); 
             sf::Vector2f point2(base / 2, 0); 
-            sf::Vector2f point3(base / 2, -base * tan(angleRad));
+            sf::Vector2f point3(base / 2, height);
             sf::Vector2f centroid(
                 (point1.x + point2.x + point3.x) / 3.f, 
                 (point1.y + point2.y + point3.y) / 3.f
             );
             sf::Vector2f triangleOrigin(0,0);
             sf::Vector2f offset = triangleOrigin -centroid;
+            point1 += offset; 
+            point2 += offset; 
+            point3 += offset;
             triangle.setPointCount(3); 
-            triangle.setPoint(0, point1 + offset); 
-            triangle.setPoint(1, point2 + offset); 
-            triangle.setPoint(2, point3 + offset); 
+            triangle.setPoint(0, point1); 
+            triangle.setPoint(1, point2); 
+            triangle.setPoint(2, point3); 
             triangle.setFillColor(sf::Color::Green);
+            float m = (point1.y - point3.y) / (point1.x - point3.x);
+            float b = point1.y - (m * point1.x);
+            // y = mx + b  
 
 
             blockShape.setSize(sf::Vector2f(50.f,50.f));
             blockShape.setOrigin(blockShape.getSize().x / 2.f, blockShape.getSize().y);
-            blockShape.setPosition(sf::Vector2f(0, 0));
+            blockShape.setPosition(sf::Vector2f((-100 - b) / m, -100));
             blockShape.setFillColor(sf::Color::Red);
-            blockShape.setRotation(-angle);
+            blockShape.setRotation(-angle); 
+
+            
 
         }; 
         ~Incline(){};
