@@ -18,7 +18,7 @@ class Incline{
             // height = base * tan(angle)
             this->angle = angle;
             float angleRad = angle * (M_PI / 180.f);
-            float height = - base * tan(angleRad); 
+            float height = -base * tan(angleRad); 
             sf::Vector2f point1(-base / 2,0); 
             sf::Vector2f point2(base / 2, 0); 
             sf::Vector2f point3(base / 2, height);
@@ -43,7 +43,7 @@ class Incline{
 
             blockShape.setSize(sf::Vector2f(50.f,50.f));
             blockShape.setOrigin(blockShape.getSize().x / 2.f, blockShape.getSize().y);
-            blockShape.setPosition(sf::Vector2f((-100 - b) / m, -100));
+            blockShape.setPosition(sf::Vector2f((point3.y - b) / m, point3.y));
             blockShape.setFillColor(sf::Color::Red);
             blockShape.setRotation(-angle); 
 
