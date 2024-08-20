@@ -13,7 +13,6 @@ class Incline{
             triangle.setPointCount(3); 
             triangle.setRadius(50);
             triangle.setFillColor(sf::Color::Green);
-
         }; 
         ~Incline(){
         };
