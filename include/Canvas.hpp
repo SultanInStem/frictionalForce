@@ -4,6 +4,7 @@
 #include "SFML/Graphics.hpp"
 class Canvas{
     private: 
+        float G = 9.81; 
         sf::RenderWindow window; 
         sf::View view; 
         Incline incline; 

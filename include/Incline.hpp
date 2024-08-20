@@ -46,9 +46,6 @@ class Incline{
             blockShape.setPosition(sf::Vector2f((point3.y - b) / m, point3.y));
             blockShape.setFillColor(sf::Color::Red);
             blockShape.setRotation(-angle); 
-
-            
-
         }; 
         ~Incline(){};
         void show(sf::RenderWindow& window){
