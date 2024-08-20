@@ -11,10 +11,11 @@ class Incline{
     public: 
         Incline(float angle){
             triangle.setPointCount(3); 
-            triangle.setRadius(50);            
+            triangle.setRadius(50);
+            triangle.setFillColor(sf::Color::Green);
+
         }; 
         ~Incline(){
-
         };
 };
 
