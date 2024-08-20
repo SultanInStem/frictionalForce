@@ -7,12 +7,12 @@ class Incline{
     private:
         sf::RectangleShape blockShape;
         sf::ConvexShape triangle;
-        float static_Coefficient; 
-        float kinetic_Coefficient;
-        float angle;
-        float mass; 
 
     public: 
+        float static_Coefficient = 0.4; 
+        float kinetic_Coefficient = 0.3;
+        float angle;
+        float mass; 
         Incline(float angle, float base){
             // tan(angle) = height / base
             // height = base * tan(angle)
