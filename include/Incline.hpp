@@ -1,8 +1,8 @@
 #ifndef INCLINE_HPP 
 #define INCLINE_HPP 
-
 #include "SFML/Graphics.hpp"
 #include <iostream>
+#include <cmath>
 class Incline{
     private:
         sf::RectangleShape blockShape;
@@ -17,9 +17,10 @@ class Incline{
             // tan(angle) = height / base
             // height = base * tan(angle)
             this->angle = angle;
+            float angleRad = angle * (M_PI / 180.f);
             sf::Vector2f point1(-base / 2,0); 
             sf::Vector2f point2(base / 2, 0); 
-            sf::Vector2f point3(base / 2, -base * tan(angle * (M_PI / 180)));
+            sf::Vector2f point3(base / 2, -base * tan(angleRad));
             sf::Vector2f centroid(
                 (point1.x + point2.x + point3.x) / 3.f, 
                 (point1.y + point2.y + point3.y) / 3.f
@@ -33,11 +34,11 @@ class Incline{
             triangle.setFillColor(sf::Color::Green);
 
 
-            blockShape.setSize(sf::Vector2f(50,50));
-            blockShape.setOrigin(sf::Vector2f(blockShape.getSize().x / 2.f, blockShape.getSize().y / 2.f));
+            blockShape.setSize(sf::Vector2f(50.f,50.f));
+            blockShape.setOrigin(blockShape.getSize().x / 2.f, blockShape.getSize().y);
+            blockShape.setPosition(sf::Vector2f(0, 0));
             blockShape.setFillColor(sf::Color::Red);
-            blockShape.setRotation(angle);
-            blockShape.setPosition(sf::Vector2f(0, -200));
+            blockShape.setRotation(-angle);
 
         }; 
         ~Incline(){};
