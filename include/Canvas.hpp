@@ -6,6 +6,7 @@
 class Canvas{
     private: 
         sf::RenderWindow window; 
+        sf::View view; 
         Incline incline; 
         Block block;
         void update(); 

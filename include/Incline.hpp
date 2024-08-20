@@ -4,18 +4,22 @@
 
 class Incline{
     private:
-        sf::CircleShape triangle;
+        sf::ConvexShape triangle;
         float static_Coefficient; 
         float kinetic_Coefficient;
         float angle;
     public: 
         Incline(float angle){
             triangle.setPointCount(3); 
-            triangle.setRadius(50);
+            triangle.setPoint(0, sf::Vector2f(100,100)); 
+            triangle.setPoint(1, sf::Vector2f(200,100)); 
+            triangle.setPoint(2, sf::Vector2f(200,200)); 
             triangle.setFillColor(sf::Color::Green);
         }; 
-        ~Incline(){
-        };
+        ~Incline(){};
+        void show(sf::RenderWindow& window){
+            window.draw(triangle);
+        }
 };
 
 

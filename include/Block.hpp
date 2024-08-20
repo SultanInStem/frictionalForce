@@ -12,6 +12,9 @@ class Block{
             shape.setFillColor(sf::Color::Red);
         };
         ~Block(){};
+        void show(sf::RenderWindow& window){
+            window.draw(shape); 
+        }
 };
 
 #endif 
