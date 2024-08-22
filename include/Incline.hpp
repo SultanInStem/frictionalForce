@@ -12,7 +12,7 @@ class Incline{
         float static_Coefficient = 0.4; 
         float kinetic_Coefficient = 0.3;
         float angle;
-        float mass; 
+        float mass = 10; 
         Incline(float angle, float base){
             // tan(angle) = height / base
             // height = base * tan(angle)
