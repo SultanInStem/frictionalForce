@@ -11,8 +11,8 @@ class Incline{
     public: 
         // sf::Vector2f blockVelocity; 
         sf::Vector2f blockVelocity;
-        float static_Coefficient = 0.4; 
-        float kinetic_Coefficient = 0.3;
+        float static_Coefficient = 0.7; 
+        float kinetic_Coefficient = 0.5;
         float angle;
         float mass = 10; 
         Incline(float angle, float base){
