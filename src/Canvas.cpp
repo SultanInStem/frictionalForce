@@ -30,11 +30,12 @@ void Canvas::handleEvents(){
 void Canvas::update(){
     // check if gravitational force can overcome static friction 
     float force = incline.mass * G * sin(incline.angle * (M_PI / 180.f));
-    float staticFriction = incline.static_Coefficient * incline.mass * G; 
-    float kineticFriction = incline.kinetic_Coefficient * incline.mass * G; 
+    float staticFriction = incline.static_Coefficient * incline.mass * G * cos(incline.angle * (M_PI / 180.f)); 
+    float kineticFriction = incline.kinetic_Coefficient * incline.mass * G * cos(incline.angle * (M_PI / 180.f)); 
     if(abs(force) < abs(staticFriction)) return; 
     float netForce = force - kineticFriction; 
-    float acc = netForce / incline.mass; 
+    float acc = netForce / incline.mass;
+    std::cout << "Acceleration: " << acc << "\n";
 
     // YOU LEFT HERE 
 
