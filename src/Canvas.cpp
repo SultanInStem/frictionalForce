@@ -1,11 +1,10 @@
 #include "Canvas.hpp"
 #include "Incline.hpp"
-Canvas::Canvas(int width, int height) : incline(60, 300){
-    
+Canvas::Canvas(int width, int height) : incline(30, 300){
     sf::ContextSettings settings;
     settings.antialiasingLevel = 15;  
     window.create(sf::VideoMode(width,height), "Friction Force", sf::Style::Titlebar | sf::Style::Close, settings); 
-    window.setFramerateLimit(90);
+    window.setFramerateLimit(60);
     view.setSize(sf::Vector2f(window.getSize().x, window.getSize().y));
     view.setCenter(sf::Vector2f(0,0));
     window.setView(view); 
@@ -34,9 +33,9 @@ void Canvas::update(){
     float kineticFriction = incline.kinetic_Coefficient * incline.mass * G * cos(incline.angle * (M_PI / 180.f)); 
     if(abs(force) < abs(staticFriction)) return; 
     float netForce = force - kineticFriction; 
-    float acc = netForce / incline.mass;
-    std::cout << "Acceleration: " << acc << "\n";
-
+    float netAcc = netForce / incline.mass;
+    
+    incline.moveBlock(netAcc);
     // YOU LEFT HERE 
 
 

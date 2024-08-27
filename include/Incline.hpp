@@ -9,6 +9,8 @@ class Incline{
         sf::ConvexShape triangle;
 
     public: 
+        // sf::Vector2f blockVelocity; 
+        sf::Vector2f blockVelocity;
         float static_Coefficient = 0.4; 
         float kinetic_Coefficient = 0.3;
         float angle;
@@ -51,6 +53,13 @@ class Incline{
         void show(sf::RenderWindow& window){
             window.draw(triangle);
             window.draw(blockShape);
+        }
+        void moveBlock(float netAcc){
+            float accX = -netAcc * cos(angle * (M_PI / 180.f));
+            float accY = netAcc * sin(angle * (M_PI / 180.f));
+            blockVelocity.x += accX; 
+            blockVelocity.y += accY; 
+            blockShape.move(blockVelocity);
         }
         
 };
